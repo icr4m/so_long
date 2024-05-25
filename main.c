@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 12:31:43 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/25 17:11:02 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/25 17:42:59 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,13 @@ int	on_destroy(t_data *data)
 
 int	on_keypress(int keysym, t_data *data)
 {
+	static size_t	count;
+
 	(void)data;
-	printf("Pressed key: %d\\n", keysym);
-	return (0);
+	count = 0;
+	printf("Pressed key: %d\\n", keysym)
+		count++;
+	return (count);
 }
 
 int	main(void)
