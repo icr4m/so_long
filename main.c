@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 12:31:43 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/28 13:08:24 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/28 13:38:34 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 int	main(void)
 {
-	t_data		data;
-	win_data	img;
+	t_data	data;
 
 	data.mlx = mlx_init();
 	if (!data.mlx)
