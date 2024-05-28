@@ -1,33 +1,30 @@
+# Nom de l'exécutable
 NAME = so_long
 
-# Contains the X11 and MLX header files
+# Contient les fichiers d'en-tête X11 et MLX
 INCLUDES = -I/usr/include -Imlx
 
-# Link X11 and MLX
+# Lier X11 et MLX
 MLX_FLAGS = -Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11
 
-# Source files
-SRCS = main.c 
+# Fichiers sources
+SRCS = main.c \
+	so_long_pixel.c \
+	so_long_utils.c
 
-# Object files
-OBJS = $(SRCS:.c=.o)
+# Compilateur et options de compilation
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
 
-# Archives
-AR = ar rc 
+# Règles
+all: $(NAME)
 
-# rules
-all : $(NAME)
+$(NAME): $(SRCS)
+	$(CC) $(CFLAGS) -o $(NAME) $(SRCS) $(MLX_FLAGS) $(INCLUDES)
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MLX_FLAGS)
-
-.c.o:
-	$(CC) $(CFLAGS) -c -o $@ $< $(INCLUDES)
-	
 clean:
-	rm -rf ${OBJS} ${OBJS_B}
+	rm -rf $(NAME)
 
 fclean: clean
-	rm -rf $(NAME)
 
 re: fclean all
