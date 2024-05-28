@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/28 12:18:04 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/28 13:08:41 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ typedef struct st_data
 	int		endian;
 }			win_data;
 
+int			on_keypress(int keysym, t_data *data);
+int			close(int keycode, t_data *data);
 int			on_keypress(int keysym, t_data *data);
 #endif
