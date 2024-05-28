@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/28 13:19:33 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/28 14:32:56 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <X11/X.h>
 # include <X11/keysym.h>
+# include <errno.h>.
 # include <mlx.h>
 # include <stdio.h>
 # include <stdlib.h>
