@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "errno.h": "c",
-        "so_long.h": "c"
+        "so_long.h": "c",
+        "libft.h": "c",
+        "get_next_line.h": "c"
     }
 }

@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:16:24 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/29 08:46:39 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/29 09:07:30 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,12 @@ int	ft_parsing(char *path)
 		if (ft_strlen(buffer) != b_size)
 			return (0);
 	}
+	return (1);
 }
 
 int	check_ber_map(char *map)
 {
-	const size_t len = ft_strlen(*map);
+	const size_t len = ft_strlen(map);
 
 	if (map[len - 1] == 'r' && map[len - 2] == 'e' && map[len - 3] == 'b')
 		return (1);
