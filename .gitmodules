@@ -1,3 +1,6 @@
 [submodule "mlx"]
 	path = mlx
 	url = https://github.com/42Paris/minilibx-linux
+[submodule "gnl"]
+	path = gnl
+	url = https://github.com/icr4m/get_next_line
