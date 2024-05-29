@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:16:24 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/29 09:07:30 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/29 16:35:00 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,19 @@
 int	ft_parsing(char *path)
 {
 	int		fd;
-	char	*buffer;
-	size_t	b_size;
+	char	*line;
+	size_t	length;
 
 	fd = open(path, O_RDONLY);
-	buffer = get_next_line(fd);
-	b_size = ft_strlen(buffer);
-	while (buffer)
+	line = get_next_line(fd);
+	length = ft_linelen(line);
+	while (line)
 	{
-		buffer = get_next_line(fd);
-		if (ft_strlen(buffer) != b_size)
+		if (ft_linelen(line) != length)
 			return (0);
+		line = get_next_line(fd);
 	}
+	
 	return (1);
 }
 

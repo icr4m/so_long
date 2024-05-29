@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   so_long_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/25 12:31:43 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/29 15:53:24 by ijaber           ###   ########.fr       */
+/*   Created: 2024/05/29 15:48:18 by ijaber            #+#    #+#             */
+/*   Updated: 2024/05/29 15:51:43 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int ac, char **av)
+size_t	ft_linelen(char *s)
 {
-	if (ac < 2)
-		ft_printf("Usage : ./so_long <map.ber> \n");
-	if (ac > 2)
-		ft_printf("Too many args... \n");
-	if (ac == 2 && !check_ber_map(av[1]))
-		ft_printf("Wrong File or Map Name. \n", 2);
-	ft_printf("%d", ft_parsing(av[1]));
-	return (0);
+	size_t i;
+
+	i = 0;
+	while (s[i] && s[i] != '\n')
+		i++;
+	return (i);
 }

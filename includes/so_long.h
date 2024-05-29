@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/29 15:14:14 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/29 15:51:38 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ typedef struct st_data
 // functions
 int			ft_parsing(char *path);
 int			check_ber_map(char *map);
+size_t		ft_linelen(char *s);
 
 #endif
