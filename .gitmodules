@@ -4,3 +4,6 @@
 [submodule "gnl"]
 	path = gnl
 	url = https://github.com/icr4m/get_next_line
+[submodule "libft"]
+	path = libft
+	url = git@github.com:icr4m/Libft.git

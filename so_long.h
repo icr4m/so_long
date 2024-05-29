@@ -6,21 +6,24 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/28 16:20:37 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/29 08:49:38 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+# include "gnl/get_next_line.h"
+# include "libft/libft.h"
 # include <X11/X.h>
 # include <X11/keysym.h>
-# include <errno.h>.
+# include <errno.h>
 # include <fcntl.h>
 # include <mlx.h>
 # include <stdio.h>
 # include <stdlib.h>
 
+// typedef struct
 typedef struct s_data
 {
 	void	*mlx;
@@ -36,7 +39,8 @@ typedef struct st_data
 	int		endian;
 }			win_data;
 
-int			on_keypress(int keysym, t_data *data);
-int			close(int keycode, t_data *data);
-int			on_keypress(int keysym, t_data *data);
+// functions
+int			ft_parsing(char *path);
+int			check_ber_map(char *map);
+
 #endif

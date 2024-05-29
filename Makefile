@@ -9,8 +9,7 @@ MLX_FLAGS = -Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11
 
 # Fichiers sources
 SRCS = main.c \
-	so_long_pixel.c \
-	so_long_utils.c
+	so_long_map_test.c
 
 # Compilateur et options de compilation
 CC = gcc
