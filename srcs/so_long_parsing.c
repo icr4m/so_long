@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:16:24 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/29 16:35:00 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/05 15:57:39 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	ft_parsing(char *path)
 	char	*line;
 	size_t	length;
 
+	
 	fd = open(path, O_RDONLY);
 	line = get_next_line(fd);
 	length = ft_linelen(line);
@@ -29,13 +30,4 @@ int	ft_parsing(char *path)
 	}
 	
 	return (1);
-}
-
-int	check_ber_map(char *map)
-{
-	const size_t len = ft_strlen(map);
-
-	if (map[len - 1] == 'r' && map[len - 2] == 'e' && map[len - 3] == 'b')
-		return (1);
-	return (0);
 }
