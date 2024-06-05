@@ -6,12 +6,18 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/29 15:51:38 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/05 16:43:23 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
+
+# define WALL '1'
+# define FLOOR '0'
+# define START 'P'
+# define EXIT 'E'
+# define COLLECT 'C'
 
 # include "ft_printf.h"
 # include "get_next_line.h"
@@ -24,23 +30,22 @@
 # include <stdlib.h>
 
 // typedef struct
-typedef struct s_data
+typedef struct s_map
 {
-	void	*mlx;
-	void	*win_ptr;
-}			t_data;
+	char	*path;
+	int		fd;
+	size_t	co_x;
+	size_t	co_y;
+}			t_map;
 
-typedef struct st_data
+typedef struct s_point
 {
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}			win_data;
+	size_t	px_x;
+	size_t	px_y;
+}			t_point;
 
 // functions
-int			ft_parsing(char *path);
+void		ft_is_rectangular(t_map map);
 int			check_ber_map(char *map);
 size_t		ft_linelen(char *s);
 
