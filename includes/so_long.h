@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/08 22:12:49 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/08 23:08:08 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ int			check_ber_map(char *map);
 size_t		ft_linelen(char *s);
 int			check_line(char *line, char c);
 bool		ft_parsing(t_map map);
+char		*ft_strchr(const char *s, int c);
 
 #endif
