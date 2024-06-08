@@ -6,18 +6,8 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 15:48:18 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/29 15:51:43 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/09 00:20:42 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-size_t	ft_linelen(char *s)
-{
-	size_t i;
-
-	i = 0;
-	while (s[i] && s[i] != '\n')
-		i++;
-	return (i);
-}

@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/08 23:08:08 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/09 00:16:06 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,26 +31,30 @@
 # include <stdlib.h>
 
 // typedef struct
+typedef struct s_point
+{
+	size_t	co_x;
+	size_t	co_y;
+}			t_point;
+
 typedef struct s_map
 {
 	char	*path;
 	int		fd;
-	size_t	co_x;
-	size_t	co_y;
+	size_t	nb_c;
+	size_t	nb_l;
+	t_point	co;
 }			t_map;
 
-typedef struct s_point
+typedef struct s_vars
 {
-	size_t	px_x;
-	size_t	px_y;
-}			t_point;
+	t_map	map;
+}			t_vars;
 
 // functions
 void		ft_is_rectangular(t_map map);
 int			check_ber_map(char *map);
 size_t		ft_linelen(char *s);
-int			check_line(char *line, char c);
-bool		ft_parsing(t_map map);
-char		*ft_strchr(const char *s, int c);
+void		map_error(char *str);
 
 #endif
