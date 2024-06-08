@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:16:24 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/05 18:27:18 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/08 21:56:14 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,17 @@ void	ft_is_rectangular(t_map map)
 	}
 }
 
-void	ft_fill_map(t_map map)
+void	ft_parsing(t_map map)
 {
-	t_point map_pos;
+	char	*line;
+	size_t	len;
 
-	map_pos.px_x = 0;
-	map_pos.px_y = 0;
+	map.fd = open(map.path, O_RDONLY);
+	line = get_next_line(map.fd);
+	len = ft_linelen(line);
+	check
+	while (line)
+	{
+			
+	}	
 }
