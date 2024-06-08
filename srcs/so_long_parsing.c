@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:16:24 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/08 21:56:14 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/08 22:45:08 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_is_rectangular(t_map map)
 	}
 }
 
-void	ft_parsing(t_map map)
+bool	ft_parsing(t_map map)
 {
 	char	*line;
 	size_t	len;
@@ -36,9 +36,16 @@ void	ft_parsing(t_map map)
 	map.fd = open(map.path, O_RDONLY);
 	line = get_next_line(map.fd);
 	len = ft_linelen(line);
-	check
-	while (line)
+	if (check_line(line, '1'))
 	{
-			
-	}	
+		while (line = get_next_line(map.fd))
+		{
+			len = ft_linelen(line);
+			if (line[0] != '1' || line[len - 1] != '1')
+				break ;
+		}
+		return (1);
+	}
+	ft_printf("Map is not good.");
+	return (0);
 }

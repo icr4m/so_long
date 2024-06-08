@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:57:25 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/08 21:56:10 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/08 22:29:03 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ int	check_ber_map(char *map)
 	return (0);
 }
 
-int	check_line(char c, char *line)
+int	check_line(char *line, char c)
 {
 	size_t	i;
 
 	i = 0;
-	while (line[i] != '\0')
+	while (line[i] != '\n')
 	{
-		if (c = line[i])
-			return (1);
+		if (c != line[i])
+			return (0);
 		i++;
 	}
-	return (NULL);
+	return (1);
 }

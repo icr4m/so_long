@@ -1,3 +1,4 @@
 *.o
 so_long
 .vscode
+*.sh
