@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 12:31:43 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/09 00:54:47 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/09 01:16:36 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int	main(int ac, char **av)
 		error_map("Wrong File or Map Name.");
 	vars.map.path = av[1];
 	map_parsing(&vars);
+	fill_grid(&vars);
 	return (0);
 }

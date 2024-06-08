@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/09 00:59:13 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/09 01:32:50 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,8 @@ int			check_ber_map(char *map);
 size_t		ft_linelen(char *s);
 void		error_map(char *str);
 int			map_parsing(t_vars *vars);
+void		fill_grid(t_vars *vars);
+void		allocate_grid(t_vars *vars, t_point *pos);
+void		allocate_line(t_vars *vars, t_point *pos);
 
 #endif
