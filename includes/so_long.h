@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/09 00:16:06 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/09 00:59:13 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct s_map
 {
 	char	*path;
 	int		fd;
+	char	**grid;
 	size_t	nb_c;
 	size_t	nb_l;
 	t_point	co;
@@ -52,9 +53,9 @@ typedef struct s_vars
 }			t_vars;
 
 // functions
-void		ft_is_rectangular(t_map map);
 int			check_ber_map(char *map);
 size_t		ft_linelen(char *s);
-void		map_error(char *str);
+void		error_map(char *str);
+int			map_parsing(t_vars *vars);
 
 #endif

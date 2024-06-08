@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 12:31:43 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/08 22:58:48 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/09 00:54:47 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 int	main(int ac, char **av)
 {
-	t_map	map;
+	t_vars	vars;
 
-	map.path = av[1];
 	if (ac < 2)
-		ft_printf("Usage : ./so_long <map.ber> \n");
+		error_map("Usage : ./so_long <map.ber>");
 	if (ac > 2)
-		ft_printf("Too many args.. \n");
-	if (ac == 2 && !check_ber_map(map.path))
-		ft_printf("Wrong File or Map Name. \n", 2);
-	ft_parsing(map);
+		error_map("Too many args..");
+	if (ac == 2 && !check_ber_map(av[1]))
+		error_map("Wrong File or Map Name.");
+	vars.map.path = av[1];
+	map_parsing(&vars);
 	return (0);
 }

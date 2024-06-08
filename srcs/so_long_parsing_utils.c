@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:57:25 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/09 00:20:36 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/09 00:53:50 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int	check_ber_map(char *map)
 	return (0);
 }
 
-void	map_error(char *str)
+void	error_map(char *str)
 {
 	ft_printf("Error: ");
-	ft_printf("%s\n");
+	ft_printf("%s \n", str);
 	exit(1);
 }
 
