@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 12:31:43 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/09 03:28:34 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/09 04:19:33 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int	main(int ac, char **av)
 	map_parsing(&vars);
 	fill_grid(&vars);
 	check_wall(&vars);
+	ft_printf("good");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:16:24 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/09 03:42:38 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/09 04:20:01 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,30 @@ void	fill_grid(t_vars *vars)
 
 void	check_wall(t_vars *vars)
 {
+	size_t	x;
+	size_t	y;
+
+	x = 0;
+	y = 0;
+	while (vars->map.grid[0][y] != '\0')
+	{
+		if (vars->map.grid[0][y] != WALL)
+			error_map("Map is not encased.");
+		y++;
+	}
+	y = 0;
+	while (x < vars->map.nb_l - 1)
+	{
+		if (vars->map.grid[x][y] != WALL)
+			error_map("Map is not encased.");
+		if (vars->map.grid[x][vars->map.nb_c - 1] != WALL)
+			error_map("Map is not encased.");
+		x++;
+	}
+	while (vars->map.grid[vars->map.nb_l - 1][y] != '\0')
+	{
+		if (vars->map.grid[vars->map.nb_l - 1][y] != WALL)
+			error_map("Map is not encased.");
+		y++;
+	}
 }
