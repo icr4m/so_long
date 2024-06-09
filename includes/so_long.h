@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/09 03:31:13 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/09 05:02:03 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef struct s_vars
 }			t_vars;
 
 // functions
+void		init_game(t_vars *vars, char *av);
 int			check_ber_map(char *map);
 size_t		ft_linelen(char *s);
 void		error_map(char *str);
