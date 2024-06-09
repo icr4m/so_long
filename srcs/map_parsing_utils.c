@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_parsing_utils.c                            :+:      :+:    :+:   */
+/*   map_parsing_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:57:25 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/09 01:32:18 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/09 03:15:53 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,6 @@ int	check_ber_map(char *map)
 	return (0);
 }
 
-void	error_map(char *str)
-{
-	ft_printf("Error: ");
-	ft_printf("%s \n", str);
-	exit(1);
-}
-
 size_t	ft_linelen(char *s)
 {
 	size_t	i;
@@ -40,12 +33,14 @@ size_t	ft_linelen(char *s)
 
 void	allocate_grid(t_vars *vars, t_point *pos)
 {
+	pos->co_x = 0;
+	pos->co_y = 0;
+	vars->map.fd = open(vars->map.path, O_RDONLY);
 	vars->map.grid = malloc(vars->map.nb_l * sizeof(char *));
-	pos->co_x = 0;
-	pos->co_x = 0;
 }
 
 void	allocate_line(t_vars *vars, t_point *pos)
 {
-	vars->map.grid[pos->co_x] = malloc(vars->map.nb_c * sizeof(char *));
+	vars->map.grid[pos->co_y] = malloc((vars->map.nb_c - 1) * sizeof(char));
 }
+
