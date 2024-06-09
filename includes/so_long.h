@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/09 05:02:03 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/09 05:26:52 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,6 @@ void		fill_grid(t_vars *vars);
 void		allocate_grid(t_vars *vars, t_point *pos);
 void		allocate_line(t_vars *vars, t_point *pos);
 void		check_wall(t_vars *vars);
+void		check_P_E(t_vars *vars);
 
 #endif

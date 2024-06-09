@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:16:24 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/09 05:07:06 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/09 05:29:36 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	map_parsing(t_vars *vars)
 
 	count = 1;
 	vars->map.fd = open(vars->map.path, O_RDONLY);
-	if (vars->map.fd < 0) 
+	if (vars->map.fd < 0)
 		error_map("Map not found.");
 	line = get_next_line(vars->map.fd);
 	vars->map.nb_c = ft_linelen(line);
@@ -79,5 +79,36 @@ void	check_wall(t_vars *vars)
 		if (vars->map.grid[vars->map.nb_l - 1][y] != WALL)
 			error_map("Map is not encased.");
 		y++;
+	}
+}
+
+void	check_P_E(t_vars *vars)
+{
+	size_t	x;
+	size_t	y;
+	size_t	token_P;
+	size_t	token_E;
+
+	token_P = 0;
+	token_E = 0;
+	x = 0;
+	while (x < vars->map.nb_l)
+	{
+		y = 0;
+		while (y < vars->map.nb_c)
+		{
+			if (vars->map.grid[x][y] == EXIT)
+				if (!token_E)
+					token_E = 1;
+				else
+					error_map("More than one exit.");
+			if (vars->map.grid[x][y] == START)
+				if (!token_P)
+					token_P = 1;
+				else
+					error_map("More than one start.");
+			y++;
+		}
+		x++;
 	}
 }
