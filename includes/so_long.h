@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/09 03:17:53 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/09 03:31:13 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,6 @@ int			map_parsing(t_vars *vars);
 void		fill_grid(t_vars *vars);
 void		allocate_grid(t_vars *vars, t_point *pos);
 void		allocate_line(t_vars *vars, t_point *pos);
-bool		strchr(char *line, char c);
+void		check_wall(t_vars *vars);
 
 #endif

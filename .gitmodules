@@ -7,3 +7,6 @@
 [submodule "libft"]
 	path = libft
 	url = git@github.com:icr4m/Libft.git
+[submodule "ft_printf"]
+	path = ft_printf
+	url = https://github.com/icr4m/ft_printf

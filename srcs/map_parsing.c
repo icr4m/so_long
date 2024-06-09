@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:16:24 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/09 03:15:30 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/09 03:42:38 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void	fill_grid(t_vars *vars)
 	}
 }
 
-void check_wall(t_vars *vars)
+void	check_wall(t_vars *vars)
 {
-	if()
 }
