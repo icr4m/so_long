@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:16:24 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/09 05:29:36 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/10 13:09:02 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void	fill_grid(t_vars *vars)
 			pos.co_x++;
 		}
 		vars->map.grid[pos.co_y][pos.co_x] = '\0';
-		printf("La Grille %ld : %s\n", pos.co_y, vars->map.grid[pos.co_y]);
 		pos.co_x = 0;
 		pos.co_y++;
 		line = get_next_line(vars->map.fd);
@@ -111,4 +110,9 @@ void	check_P_E(t_vars *vars)
 		}
 		x++;
 	}
+}
+
+void path_finder(t_vars *vars)
+{
+	
 }
