@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:16:24 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/10 13:37:51 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/10 15:58:41 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,20 @@ void	fill_grid(t_vars *vars)
 	char	*line;
 	t_point	pos;
 
-	allocate_grid(vars, &pos);
+	allocate_grid_cell(vars, &pos);
 	line = get_next_line(vars->map.fd);
 	while (line)
 	{
 		allocate_line(vars, &pos);
 		while (pos.co_x < vars->map.nb_c)
 		{
-			vars->map.grid[pos.co_y][pos.co_x] = line[pos.co_x];
-			pos.co_x++;
+			fill_line_cell(line, vars, &pos);
 		}
 		vars->map.grid[pos.co_y][pos.co_x] = '\0';
+		// printf("%s\n", vars->map.grid[pos.co_y]);
+		for (int i = 0; i < pos.co_x; i++)
+			printf("%c", vars->map.cell[pos.co_y][i]);
+		printf("\n");
 		pos.co_x = 0;
 		pos.co_y++;
 		line = get_next_line(vars->map.fd);
@@ -78,36 +81,5 @@ void	check_wall(t_vars *vars)
 		if (vars->map.grid[vars->map.nb_l - 1][y] != WALL)
 			error_map("Map is not encased.");
 		y++;
-	}
-}
-
-void	check_P_E(t_vars *vars)
-{
-	size_t	x;
-	size_t	y;
-	size_t	token_P;
-	size_t	token_E;
-
-	token_P = 0;
-	token_E = 0;
-	x = 0;
-	while (x < vars->map.nb_l)
-	{
-		y = 0;
-		while (y < vars->map.nb_c)
-		{
-			if (vars->map.grid[x][y] == EXIT)
-				if (!token_E)
-					token_E = 1;
-				else
-					error_map("More than one exit.");
-			if (vars->map.grid[x][y] == START)
-				if (!token_P)
-					token_P = 1;
-				else
-					error_map("More than one start.");
-			y++;
-		}
-		x++;
 	}
 }
