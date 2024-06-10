@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:16:24 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/10 15:58:41 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/10 17:34:46 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	fill_grid(t_vars *vars)
 
 	allocate_grid_cell(vars, &pos);
 	line = get_next_line(vars->map.fd);
-	while (line)
+	while (pos.co_y < vars->map.nb_l)
 	{
 		allocate_line(vars, &pos);
 		while (pos.co_x < vars->map.nb_c)
@@ -49,10 +49,10 @@ void	fill_grid(t_vars *vars)
 			fill_line_cell(line, vars, &pos);
 		}
 		vars->map.grid[pos.co_y][pos.co_x] = '\0';
-		// printf("%s\n", vars->map.grid[pos.co_y]);
-		for (int i = 0; i < pos.co_x; i++)
-			printf("%c", vars->map.cell[pos.co_y][i]);
-		printf("\n");
+		printf("%s\n", vars->map.grid[pos.co_y]);
+		// for (int i = 0; i < vars->map.nb_c; i++)
+		// 	printf("%d", vars->map.cell[pos.co_y][i].value);
+		// printf("\n");
 		pos.co_x = 0;
 		pos.co_y++;
 		line = get_next_line(vars->map.fd);
