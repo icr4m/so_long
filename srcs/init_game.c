@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 04:57:30 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/09 05:06:13 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/10 19:58:27 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,7 @@
 void	init_game(t_vars *vars, char *av)
 {
 	vars->map.path = av;
+	vars->elems.NB_COLLECTIBLES = 0;
+	vars->elems.NB_START = 0;
+	vars->elems.NB_EXIT = 0;
 }

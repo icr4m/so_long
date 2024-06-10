@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/10 16:43:47 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/10 19:43:48 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,17 @@ typedef struct s_map
 	size_t	nb_l;
 }			t_map;
 
+typedef struct s_elems
+{
+	size_t	NB_EXIT;
+	size_t	NB_START;
+	size_t	NB_COLLECTIBLES;
+}			t_elems;
+
 typedef struct s_vars
 {
 	t_map	map;
+	t_elems	elems;
 }			t_vars;
 
 // functions
@@ -71,5 +79,6 @@ void		allocate_line(t_vars *vars, t_point *pos);
 void		check_wall(t_vars *vars);
 void		check_P_E(t_vars *vars);
 void		fill_line_cell(char *line, t_vars *vars, t_point *pos);
+void		map_checker(t_vars *vars);
 
 #endif
