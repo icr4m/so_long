@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:47:19 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/12 14:32:06 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/12 17:08:44 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,9 @@ typedef struct s_win
 {
 	void	*mlx_ptr;
 	void	*win_ptr;
+	void	*img;
 	char	**paths;
+    
 }			t_win;
 
 typedef struct s_vars

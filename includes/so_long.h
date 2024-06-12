@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/12 14:17:21 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/12 17:06:54 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,6 @@ void	find_map_error(t_vars *vars);
 void	path_finder(t_vars *vars, t_point pos);
 void	is_win(t_vars *vars);
 
-void	new_window(t_vars *vars);
+int		new_window(t_vars *vars);
 
 #endif
