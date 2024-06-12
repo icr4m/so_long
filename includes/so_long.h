@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/12 11:59:08 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/12 12:37:02 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # define Green "\033[0;32m"
 # define Red "\033[0;31m"
 # define Purple "\033[0;35m"
-
 # define WALL '1'
 # define FLOOR '0'
 # define START 'P'
@@ -73,6 +72,7 @@ typedef struct s_vars
 	size_t	EXIT_FOUND;
 	size_t	C_FOUND;
 	size_t	WIN;
+	t_point	start_p;
 }			t_vars;
 
 // functions
@@ -92,5 +92,6 @@ void		check_wall(t_vars *vars);
 void		map_checker(t_vars *vars);
 void		find_map_error(t_vars *vars);
 void		path_finder(t_vars *vars, t_point pos);
+void		is_win(t_vars *vars);
 
 #endif
