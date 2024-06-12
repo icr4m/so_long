@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:38:14 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/12 12:44:48 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/12 13:37:40 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	path_finder(t_vars *vars, t_point pos)
 void	is_win(t_vars *vars)
 {
 	if (vars->WIN == 1)
-		ft_printf(Green "GG c gagne\n" White);
+		ft_printf(Green "Map parfaite\n" White);
 	else
 		ft_printf(Red "No path find\n" White);
 }
