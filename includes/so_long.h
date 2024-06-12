@@ -6,12 +6,17 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/10 19:43:48 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/12 11:59:08 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
+
+# define White "\033[0;37m"
+# define Green "\033[0;32m"
+# define Red "\033[0;31m"
+# define Purple "\033[0;35m"
 
 # define WALL '1'
 # define FLOOR '0'
@@ -65,20 +70,27 @@ typedef struct s_vars
 {
 	t_map	map;
 	t_elems	elems;
+	size_t	EXIT_FOUND;
+	size_t	C_FOUND;
+	size_t	WIN;
 }			t_vars;
 
 // functions
 void		init_game(t_vars *vars, char *av);
+
 int			check_ber_map(char *map);
 size_t		ft_linelen(char *s);
 void		error_map(char *str);
-int			map_parsing(t_vars *vars);
-void		fill_grid(t_vars *vars);
 void		allocate_grid_cell(t_vars *vars, t_point *pos);
 void		allocate_line(t_vars *vars, t_point *pos);
-void		check_wall(t_vars *vars);
-void		check_P_E(t_vars *vars);
 void		fill_line_cell(char *line, t_vars *vars, t_point *pos);
+
+int			map_parsing(t_vars *vars);
+void		fill_grid(t_vars *vars);
+void		check_wall(t_vars *vars);
+
 void		map_checker(t_vars *vars);
+void		find_map_error(t_vars *vars);
+void		path_finder(t_vars *vars, t_point pos);
 
 #endif

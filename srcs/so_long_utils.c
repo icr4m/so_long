@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 15:48:18 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/10 16:43:34 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/12 12:00:06 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	error_map(char *str)
 {
-	ft_printf("Error: ");
+	ft_printf(Red "Error: " White);
 	ft_printf("%s \n", str);
 	exit(1);
 }
