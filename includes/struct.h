@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:47:19 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/16 17:36:38 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/16 18:35:01 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ typedef struct s_vars
 	t_sprite	wall;
 	t_sprite	background;
 	t_sprite	exit;
+	t_sprite	herbe;
 	t_sprite	collectibles;
 	t_player	player;
 }				t_vars;

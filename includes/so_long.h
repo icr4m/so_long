@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/16 17:57:18 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/16 19:00:58 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # define COLLECT 'C'
 
 # ifndef SIZE
-#  define SIZE 64
+#  define SIZE 32
 # endif
 
 # include "ft_printf.h"
@@ -43,6 +43,7 @@
 
 // functions
 void	init_game(t_vars *vars, char *av);
+void	ft_new_window(t_vars *vars);
 
 int		check_ber_map(char *map);
 size_t	ft_linelen(char *s);
@@ -62,8 +63,7 @@ void	is_win(t_vars *vars);
 
 void	load_sprite(t_vars *vars);
 
-void	ft_new_window(t_vars *vars);
-void	ft_draw_map(t_vars *vars);
-void	ft_put_to_image(t_vars *vars, t_point s, char type);
+void	draw_map(t_vars *vars);
+void	put_to_image(t_vars *vars, t_point s, char type);
 
 #endif
