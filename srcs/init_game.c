@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 04:57:30 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/12 12:19:42 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/16 13:05:33 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,9 @@ void	init_game(t_vars *vars, char *av)
 	vars->C_FOUND = 0;
 	vars->WIN = 0;
 	vars->start_p = (t_point){0, 0};
+}
+
+void draw_background(t_vars *vars)
+{
+	
 }
