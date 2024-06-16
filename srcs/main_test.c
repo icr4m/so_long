@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 12:31:43 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/12 17:09:18 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/16 17:22:06 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ int	main(int ac, char **av)
 	check_wall(&vars);
 	map_checker(&vars);
 	find_map_error(&vars);
-	path_finder(&vars, vars.start_p);
+	path_finder(&vars, vars.player.start_p);
 	is_win(&vars);
-	new_window(&vars);
+	load_sprite(&vars);
+	ft_draw_map(&vars);
 	return (0);
 }

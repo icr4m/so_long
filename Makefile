@@ -2,7 +2,7 @@
 NAME = so_long
 
 # Source Files
-SRC = $(addprefix srcs/, main_test.c map_parsing.c so_long_utils.c map_parsing_utils.c init_game.c path_finder.c window.c)
+SRC = $(addprefix srcs/, main_test.c map_parsing.c so_long_utils.c map_parsing_utils.c init_game.c path_finder.c display.c load.c)
 GNL_SRC = $(addprefix gnl/, get_next_line_utils.c get_next_line.c)
 PRINTF_SRC = $(addprefix ft_printf/, ft_printf_utils.c ft_printf.c ft_put_printf.c)
 OBJ =  $(SRC:.c=.o)
