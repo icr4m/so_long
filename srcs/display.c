@@ -6,11 +6,18 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 15:34:13 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/16 17:17:25 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/16 17:51:41 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	ft_new_window(t_vars *vars)
+{
+	vars->windows.mlx_ptr = mlx_init();
+	vars->windows.win_ptr = mlx_new_window(vars->windows.mlx_ptr, vars->map.nb_l
+			* SIZE, vars->map.nb_c * SIZE, "Squirtle Lounge");
+}
 
 void	ft_draw_map(t_vars *vars)
 {
@@ -36,20 +43,18 @@ void	ft_draw_map(t_vars *vars)
 	}
 }
 
-void	ft_put_to_image(t_vars *vars, t_point pos, char type)
+void	ft_put_to_image(t_vars *vars, t_point s, char type)
 {
 	if (type == WALL)
 		mlx_put_image_to_window(vars->windows.mlx_ptr, vars->windows.win_ptr,
-			vars->wall.img, vars->wall.size.co_x, vars->wall.size.co_y);
+			vars->wall.img, s.co_x, s.co_y);
 	if (type == EXIT)
 		mlx_put_image_to_window(vars->windows.mlx_ptr, vars->windows.win_ptr,
-			vars->exit.img, vars->exit.size.co_x, vars->exit.size.co_y);
+			vars->exit.img, s.co_x, s.co_y);
 	if (type == COLLECT)
 		mlx_put_image_to_window(vars->windows.mlx_ptr, vars->windows.win_ptr,
-			vars->collectibles.img, vars->collectibles.size.co_x,
-			vars->collectibles.size.co_y);
+			vars->collectibles.img, s.co_x, s.co_y);
 	if (type == FLOOR)
 		mlx_put_image_to_window(vars->windows.mlx_ptr, vars->windows.win_ptr,
-			vars->background.img, vars->background.size.co_x,
-			vars->background.size.co_y);
+			vars->background.img, s.co_x, s.co_y);
 }

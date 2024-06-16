@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/16 17:17:44 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/16 17:57:18 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # define COLLECT 'C'
 
 # ifndef SIZE
-#  define SIZE 32
+#  define SIZE 64
 # endif
 
 # include "ft_printf.h"
@@ -62,6 +62,8 @@ void	is_win(t_vars *vars);
 
 void	load_sprite(t_vars *vars);
 
+void	ft_new_window(t_vars *vars);
 void	ft_draw_map(t_vars *vars);
-void	ft_put_to_image(t_vars *vars, t_point pos, char type);
+void	ft_put_to_image(t_vars *vars, t_point s, char type);
+
 #endif

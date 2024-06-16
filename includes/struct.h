@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:47:19 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/16 17:21:57 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/16 17:36:38 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ typedef struct s_cell
 
 typedef struct s_sprite
 {
-	t_point		size;
+	int			s_x;
+	int			s_y;
 	void		*img;
 }				t_sprite;
 

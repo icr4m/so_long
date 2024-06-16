@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:38:14 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/12 13:37:40 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/16 17:34:08 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	map_checker(t_vars *vars)
 			if (vars->map.grid[i][j] == START)
 			{
 				vars->elems.NB_START++;
-				vars->start_p = (t_point){i, j};
+				vars->player.start_p = (t_point){i, j};
 			}
 			if (vars->map.grid[i][j] == EXIT)
 				vars->elems.NB_EXIT++;
