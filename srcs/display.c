@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 15:34:13 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/16 19:00:49 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/17 15:16:13 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ void	put_to_image(t_vars *vars, t_point s, char type)
 			vars->collectibles.img, s.co_x, s.co_y);
 	if (type == FLOOR)
 		mlx_put_image_to_window(vars->windows.mlx_ptr, vars->windows.win_ptr,
-			vars->herbe.img, s.co_x, s.co_y);
+			vars->background.img, s.co_x, s.co_y);
 }

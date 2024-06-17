@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/16 19:00:58 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/17 15:16:51 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # define COLLECT 'C'
 
 # ifndef SIZE
-#  define SIZE 32
+#  define SIZE 64
 # endif
 
 # include "ft_printf.h"
