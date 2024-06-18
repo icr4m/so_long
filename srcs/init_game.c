@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 04:57:30 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/18 16:47:39 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/18 18:48:22 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,4 @@ int	key_moves(int keynb, t_vars *vars)
 	if (keynb == DOWN || keynb == DOWN2)
 		printf("down\n");
 	return (0);
-}
-
-int	close_window(int keynb, t_vars *vars)
-{
-	if (keynb == 65307)
-	{
-		mlx_destroy_display(vars->windows.mlx_ptr);
-		mlx_destroy_window(vars->windows.mlx_ptr, vars->windows.win_ptr);
-		free(vars->windows.mlx_ptr);
-		exit(0);
-		return (0);
-	}
-	else
-		return (1);
 }

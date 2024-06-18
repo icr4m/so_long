@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:16:24 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/10 17:34:46 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/18 19:08:19 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,15 @@ int	map_parsing(t_vars *vars)
 		error_map("Map not found.");
 	line = get_next_line(vars->map.fd);
 	vars->map.nb_c = ft_linelen(line);
+	free(line);
 	while (line = get_next_line(vars->map.fd))
 	{
 		if (ft_linelen(line) != vars->map.nb_c)
 			error_map("Map is not rectangular.");
 		count++;
+		free(line);
 	}
+	free(line);
 	close(vars->map.fd);
 	vars->map.nb_l = count;
 	return (1);
@@ -49,12 +52,9 @@ void	fill_grid(t_vars *vars)
 			fill_line_cell(line, vars, &pos);
 		}
 		vars->map.grid[pos.co_y][pos.co_x] = '\0';
-		printf("%s\n", vars->map.grid[pos.co_y]);
-		// for (int i = 0; i < vars->map.nb_c; i++)
-		// 	printf("%d", vars->map.cell[pos.co_y][i].value);
-		// printf("\n");
 		pos.co_x = 0;
 		pos.co_y++;
+		free(line);
 		line = get_next_line(vars->map.fd);
 	}
 }

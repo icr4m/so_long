@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/18 18:10:34 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/18 18:51:35 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@
 // functions
 void	init_game(t_vars *vars, char *av);
 void	new_window(t_vars *vars);
-int		close_window(int keynb, t_vars *vars);
 int		key_moves(int keynb, t_vars *vars);
 
 int		check_ber_map(char *map);
@@ -77,5 +76,7 @@ void	draw_map(t_vars *vars);
 void	put_to_image(t_vars *vars, t_point s, char type);
 
 void	free_grid(t_vars *vars);
+int		close_window(int keynb, t_vars *vars);
+void	free_all_image(t_vars *vars);
 
 #endif
