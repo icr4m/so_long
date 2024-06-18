@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/17 15:16:51 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/17 17:46:42 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,9 @@
 
 // functions
 void	init_game(t_vars *vars, char *av);
-void	ft_new_window(t_vars *vars);
+void	new_window(t_vars *vars);
+int		close_window(int keynb, t_vars *vars);
+int		key_moves(int keynb, t_vars *vars);
 
 int		check_ber_map(char *map);
 size_t	ft_linelen(char *s);

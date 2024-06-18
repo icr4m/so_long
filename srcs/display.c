@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 15:34:13 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/17 15:16:13 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/17 16:21:39 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	draw_map(t_vars *vars)
 			if (vars->map.grid[s.co_x / SIZE][s.co_y / SIZE] == COLLECT)
 				put_to_image(vars, s, COLLECT);
 			if (vars->map.grid[s.co_x / SIZE][s.co_y / SIZE] == FLOOR)
+				put_to_image(vars, s, FLOOR);
+			if (vars->map.grid[s.co_x / SIZE][s.co_y / SIZE] == START)
 				put_to_image(vars, s, FLOOR);
 			s.co_y += SIZE;
 		}
