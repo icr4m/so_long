@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/17 17:46:42 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/18 18:10:34 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,14 @@
 # define START 'P'
 # define EXIT 'E'
 # define COLLECT 'C'
+# define UP 65362
+# define UP2 119
+# define RIGHT 65363
+# define RIGHT2 100
+# define LEFT 65361
+# define LEFT2 97
+# define DOWN 65364
+# define DOWN2 115
 
 # ifndef SIZE
 #  define SIZE 64
@@ -67,5 +75,7 @@ void	load_sprite(t_vars *vars);
 
 void	draw_map(t_vars *vars);
 void	put_to_image(t_vars *vars, t_point s, char type);
+
+void	free_grid(t_vars *vars);
 
 #endif

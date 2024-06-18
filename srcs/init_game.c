@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 04:57:30 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/17 17:55:21 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/18 16:47:39 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,15 @@ void	new_window(t_vars *vars)
 
 int	key_moves(int keynb, t_vars *vars)
 {
-	printf("Key press :%d\n", keynb);
-	return (1);
+	if (keynb == UP || keynb == UP2)
+		printf("up\n");
+	if (keynb == RIGHT || keynb == RIGHT2)
+		printf("right\n");
+	if (keynb == LEFT || keynb == LEFT2)
+		printf("left\n");
+	if (keynb == DOWN || keynb == DOWN2)
+		printf("down\n");
+	return (0);
 }
 
 int	close_window(int keynb, t_vars *vars)
