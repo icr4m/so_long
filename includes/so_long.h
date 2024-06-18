@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/18 18:51:35 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/18 19:37:23 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,6 @@
 # define START 'P'
 # define EXIT 'E'
 # define COLLECT 'C'
-# define UP 65362
-# define UP2 119
-# define RIGHT 65363
-# define RIGHT2 100
-# define LEFT 65361
-# define LEFT2 97
-# define DOWN 65364
-# define DOWN2 115
 
 # ifndef SIZE
 #  define SIZE 64
@@ -48,6 +40,18 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
+
+typedef enum e_key
+{
+	UP = 65362,
+	UP2 = 119,
+	RIGHT = 65363,
+	RIGHT2 = 100,
+	LEFT = 65361,
+	LEFT2 = 97,
+	DOWN = 65364,
+	DOWN2 = 115
+}		t_key;
 
 // functions
 void	init_game(t_vars *vars, char *av);
