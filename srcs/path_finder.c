@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:38:14 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/20 17:27:26 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/20 17:32:01 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	path_finder(t_vars *vars, t_point pos)
 	if (vars->elems.EXIT_FOUND == 1
 		&& vars->elems.C_FOUND == vars->elems.NB_COLLECTIBLES)
 	{
-		vars->elems.WIN = 1;
+		vars->elems.IS_WIN = 1;
 		return ;
 	}
 	path_finder(vars, (t_point){pos.co_x + 1, pos.co_y});
@@ -77,7 +77,7 @@ void	path_finder(t_vars *vars, t_point pos)
 
 void	is_win(t_vars *vars)
 {
-	if (vars->WIN == 1)
+	if (vars->elems.IS_WIN == 1)
 		ft_printf(Green "Map parfaite\n" White);
 	else
 		ft_printf(Red "No path find\n" White);

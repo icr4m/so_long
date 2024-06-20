@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 15:34:13 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/20 17:25:39 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/20 17:53:40 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,25 @@ void	draw_map(t_vars *vars)
 {
 	t_point	s;
 
-	s.co_x = 0;
-	while (s.co_x < vars->map.nb_l * SIZE)
+	s.co_y = 0;
+	while (s.co_y < vars->map.nb_l * SIZE)
 	{
-		s.co_y = 0;
-		while (s.co_y < vars->map.nb_c * SIZE)
+		s.co_x = 0;
+		while (s.co_x < vars->map.nb_c * SIZE)
 		{
-			if (vars->map.grid[s.co_x / SIZE][s.co_y / SIZE] == WALL)
+			if (vars->map.grid[s.co_y / SIZE][s.co_x / SIZE] == WALL)
 				put_to_image(vars, s, WALL);
-			if (vars->map.grid[s.co_x / SIZE][s.co_y / SIZE] == EXIT)
+			if (vars->map.grid[s.co_y / SIZE][s.co_x / SIZE] == EXIT)
 				put_to_image(vars, s, EXIT);
-			if (vars->map.grid[s.co_x / SIZE][s.co_y / SIZE] == COLLECT)
+			if (vars->map.grid[s.co_y / SIZE][s.co_x / SIZE] == COLLECT)
 				put_to_image(vars, s, COLLECT);
-			if (vars->map.grid[s.co_x / SIZE][s.co_y / SIZE] == FLOOR)
+			if (vars->map.grid[s.co_y / SIZE][s.co_x / SIZE] == FLOOR)
 				put_to_image(vars, s, FLOOR);
-			if (vars->map.grid[s.co_x / SIZE][s.co_y / SIZE] == START)
+			if (vars->map.grid[s.co_y / SIZE][s.co_x / SIZE] == START)
 				put_to_image(vars, s, FLOOR);
-			s.co_y += SIZE;
+			s.co_x += SIZE;
 		}
-		s.co_x += SIZE;
+		s.co_y += SIZE;
 	}
 }
 

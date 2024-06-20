@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:47:19 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/20 17:24:42 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/20 17:30:20 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ typedef struct s_elems
 	size_t		NB_COLLECTIBLES;
 	size_t		EXIT_FOUND;
 	size_t		C_FOUND;
-	size_t		WIN;
+	size_t		IS_WIN;
 }				t_elems;
 
 typedef struct s_vars

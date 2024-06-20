@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 18:03:59 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/20 17:25:55 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/20 17:32:22 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ int	close_window(int keynb, t_vars *vars)
 
 void	free_all_image(t_vars *vars)
 {
-	mlx_destroy_image(vars->windows.mlx_ptr, vars->wall.img);
-	mlx_destroy_image(vars->windows.mlx_ptr, vars->background.img);
-	mlx_destroy_image(vars->windows.mlx_ptr, vars->exit.img);
-	mlx_destroy_image(vars->windows.mlx_ptr, vars->collectibles.img);
+	mlx_destroy_image(vars->mlx_ptr, vars->wall.img);
+	mlx_destroy_image(vars->mlx_ptr, vars->background.img);
+	mlx_destroy_image(vars->mlx_ptr, vars->exit.img);
+	mlx_destroy_image(vars->mlx_ptr, vars->collectibles.img);
 }
