@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 12:31:43 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/20 18:03:26 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/20 18:49:49 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,11 @@ int	main(int ac, char **av)
 	find_map_error(&vars);
 	path_finder(&vars, vars.player.start_p);
 	is_win(&vars);
-	printf("nb c:%ld\n", vars.map.nb_c);
-	printf("nb l:%ld\n", vars.map.nb_l);
 	new_window(&vars);
 	load_sprite(&vars);
 	draw_map(&vars);
 	// Hooks
-	mlx_hook(vars.win_ptr, KeyPress, KeyPressMask, &key_moves, &vars);
-	mlx_hook(vars.win_ptr, KeyRelease, KeyReleaseMask, &close_window, &vars);
+	mlx_hook(vars.win_ptr, KeyPress, KeyPressMask, &input_manager, &vars);
 	mlx_loop(vars.mlx_ptr);
 	free_all_image(&vars);
 	free_grid(&vars);

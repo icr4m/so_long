@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:38:14 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/20 17:32:01 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/20 23:11:06 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 void	map_checker(t_vars *vars)
 {
-	size_t	i;
-	size_t	j;
+	size_t	x;
+	size_t	y;
 
-	i = 0;
-	while (i < vars->map.nb_l)
+	y = 0;
+	while (y < vars->map.nb_l)
 	{
-		j = 0;
-		while (j < vars->map.nb_c)
+		x = 0;
+		while (x < vars->map.nb_c)
 		{
-			if (vars->map.grid[i][j] == START)
+			if (vars->map.grid[y][x] == START)
 			{
 				vars->elems.NB_START++;
-				vars->player.start_p = (t_point){i, j};
+				vars->player.start_p = (t_point){x, y};
 			}
-			if (vars->map.grid[i][j] == EXIT)
+			if (vars->map.grid[y][x] == EXIT)
 				vars->elems.NB_EXIT++;
-			if (vars->map.grid[i][j] == COLLECT)
+			if (vars->map.grid[y][x] == COLLECT)
 				vars->elems.NB_COLLECTIBLES++;
-			j++;
+			x++;
 		}
-		i++;
+		y++;
 	}
 }
 
@@ -52,16 +52,16 @@ void	find_map_error(t_vars *vars)
 
 void	path_finder(t_vars *vars, t_point pos)
 {
-	if (pos.co_x > vars->map.nb_l || pos.co_y > vars->map.nb_c || pos.co_x < 0
+	if (pos.co_x > vars->map.nb_c || pos.co_y > vars->map.nb_l || pos.co_x < 0
 		|| pos.co_y < 0)
 		return ;
-	if (vars->map.grid[pos.co_x][pos.co_y] == WALL
-		|| vars->map.cell[pos.co_x][pos.co_y].value == 1)
+	if (vars->map.grid[pos.co_y][pos.co_x] == WALL
+		|| vars->map.cell[pos.co_y][pos.co_x].value == 1)
 		return ;
-	vars->map.cell[pos.co_x][pos.co_y].value = 1;
-	if (vars->map.grid[pos.co_x][pos.co_y] == COLLECT)
+	vars->map.cell[pos.co_y][pos.co_x].value = 1;
+	if (vars->map.grid[pos.co_y][pos.co_x] == COLLECT)
 		vars->elems.C_FOUND++;
-	if (vars->map.grid[pos.co_x][pos.co_y] == EXIT)
+	if (vars->map.grid[pos.co_y][pos.co_x] == EXIT)
 		vars->elems.EXIT_FOUND++;
 	if (vars->elems.EXIT_FOUND == 1
 		&& vars->elems.C_FOUND == vars->elems.NB_COLLECTIBLES)

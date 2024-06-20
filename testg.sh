@@ -2,4 +2,4 @@ make re
 
 clear
 
-./so_long maps/good.ber
+./so_long maps/map2.ber
