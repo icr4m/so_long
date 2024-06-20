@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:16:24 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/20 22:27:34 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/21 00:55:31 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ void	fill_grid(t_vars *vars)
 
 void	check_wall(t_vars *vars)
 {
-	size_t	x;
-	size_t	y;
+	size_t x;
+	size_t y;
 
 	x = 0;
 	y = 0;

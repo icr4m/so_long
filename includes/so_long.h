@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/20 18:10:36 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/21 00:45:21 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
-
-typedef enum e_key
-{
-	UP = 65362,
-	UP2 = 119,
-	RIGHT = 65363,
-	RIGHT2 = 100,
-	LEFT = 65361,
-	LEFT2 = 97,
-	DOWN = 65364,
-	DOWN2 = 115,
-	ECHAP = 65307
-}		t_key;
 
 // functions
 void	init_game(t_vars *vars, char *av);

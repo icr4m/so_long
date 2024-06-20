@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 15:48:18 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/20 18:20:41 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/21 00:37:54 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,12 @@ int	input_manager(int keynb, t_vars *vars)
 		return (0);
 	}
 	if (keynb == UP || keynb == UP2)
-		printf("start position :%ld %ld\n", vars->player.start_p.co_y,
-			vars->player.start_p.co_x);
+		
 	if (keynb == RIGHT || keynb == RIGHT2)
-		printf("start position :%ld %ld\n", vars->player.start_p.co_y,
-			vars->player.start_p.co_x);
+
 	if (keynb == LEFT || keynb == LEFT2)
-		printf("start position :%ld %ld\n", vars->player.start_p.co_y,
-			vars->player.start_p.co_x);
+
 	if (keynb == DOWN || keynb == DOWN2)
-		printf("start position :%ld %ld\n", vars->player.start_p.co_y,
-			vars->player.start_p.co_x);
+
 	return (0);
 }
