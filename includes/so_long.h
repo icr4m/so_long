@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/18 19:37:23 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/20 17:15:03 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,12 @@ typedef enum e_key
 // functions
 void	init_game(t_vars *vars, char *av);
 void	new_window(t_vars *vars);
+
+void	error_map(char *str);
 int		key_moves(int keynb, t_vars *vars);
 
 int		check_ber_map(char *map);
 size_t	ft_linelen(char *s);
-void	error_map(char *str);
 void	allocate_grid_cell(t_vars *vars, t_point *pos);
 void	allocate_line(t_vars *vars, t_point *pos);
 void	fill_line_cell(char *line, t_vars *vars, t_point *pos);

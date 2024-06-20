@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:47:19 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/18 18:51:03 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/20 17:24:42 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,24 +54,18 @@ typedef struct s_elems
 	size_t		NB_EXIT;
 	size_t		NB_START;
 	size_t		NB_COLLECTIBLES;
+	size_t		EXIT_FOUND;
+	size_t		C_FOUND;
+	size_t		WIN;
 }				t_elems;
-
-typedef struct s_win
-{
-	void		*mlx_ptr;
-	void		*win_ptr;
-	void		*img;
-}				t_win;
 
 typedef struct s_vars
 {
 	t_map		map;
 	t_elems		elems;
-	t_win		windows;
-	size_t		EXIT_FOUND;
-	size_t		C_FOUND;
-	size_t		WIN;
 	t_sprite	wall;
+	void		*mlx_ptr;
+	void		*win_ptr;
 	t_sprite	background;
 	t_sprite	exit;
 	t_sprite	collectibles;

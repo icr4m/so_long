@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 15:34:13 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/18 17:58:36 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/20 17:25:39 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,15 @@ void	draw_map(t_vars *vars)
 void	put_to_image(t_vars *vars, t_point s, char type)
 {
 	if (type == WALL)
-		mlx_put_image_to_window(vars->windows.mlx_ptr, vars->windows.win_ptr,
-			vars->wall.img, s.co_x, s.co_y);
+		mlx_put_image_to_window(vars->mlx_ptr, vars->win_ptr, vars->wall.img,
+			s.co_x, s.co_y);
 	if (type == EXIT)
-		mlx_put_image_to_window(vars->windows.mlx_ptr, vars->windows.win_ptr,
-			vars->exit.img, s.co_x, s.co_y);
+		mlx_put_image_to_window(vars->mlx_ptr, vars->win_ptr, vars->exit.img,
+			s.co_x, s.co_y);
 	if (type == COLLECT)
-		mlx_put_image_to_window(vars->windows.mlx_ptr, vars->windows.win_ptr,
+		mlx_put_image_to_window(vars->mlx_ptr, vars->win_ptr,
 			vars->collectibles.img, s.co_x, s.co_y);
 	if (type == FLOOR)
-		mlx_put_image_to_window(vars->windows.mlx_ptr, vars->windows.win_ptr,
+		mlx_put_image_to_window(vars->mlx_ptr, vars->win_ptr,
 			vars->background.img, s.co_x, s.co_y);
 }
