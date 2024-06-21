@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 04:57:30 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/21 04:49:13 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/21 06:05:49 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	init_game(t_vars *vars, char *av)
 {
 	vars->map.path = av;
 	vars->elems.C_FOUND = 0;
+	vars->elems.IS_WIN = 0;
 	vars->elems.EXIT_FOUND = 0;
 	vars->elems.NB_COLLECTIBLES = 0;
 	vars->elems.NB_START = 0;

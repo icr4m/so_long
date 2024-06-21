@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:47:19 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/21 04:53:45 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/21 05:40:19 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ typedef enum e_key
 	LEFT2 = 97,
 	DOWN = 65364,
 	DOWN2 = 115,
-	ECHAP = 65307
+	ECHAP = 65307,
+	CLOSE_ICON = 17,
 }					t_key;
 
 // typedef struct

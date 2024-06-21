@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/21 04:22:49 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/21 05:51:59 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void	draw_player(t_vars *vars);
 void	free_grid(t_vars *vars);
 void	free_all_image(t_vars *vars);
 void	free_final(t_vars *vars);
+int		close_windows(t_vars *vars);
 
 void	move_up(t_vars *vars, t_point pos);
 void	move_down(t_vars *vars, t_point pos);

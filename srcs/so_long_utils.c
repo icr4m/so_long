@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 15:48:18 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/21 04:59:57 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/21 06:17:33 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	update_player(t_vars *vars)
 
 int	input_manager(int keynb, t_vars *vars)
 {
-	if (keynb == ECHAP)
+	if (keynb == ECHAP || keynb == CLOSE_ICON)
 	{
 		free_final(vars);
 		return (0);
@@ -43,14 +43,13 @@ int	input_manager(int keynb, t_vars *vars)
 	if (keynb == DOWN || keynb == DOWN2)
 		move_down(vars, (t_point){vars->player.co.co_x, vars->player.co.co_y
 			+ 1});
-	printf("%d\n", vars->player.d);
 	return (0);
 }
 
 int	update_render(t_vars *vars)
 {
 	if (vars->elems.IS_WIN == 1)
-		error_map("masterclass");
+		free_final(vars);
 	draw_map(vars);
 	draw_player(vars);
 	usleep(80500);

@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 12:31:43 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/21 03:24:21 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/21 05:52:32 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int	main(int ac, char **av)
 	draw_map(&vars);
 	// Hooks
 	mlx_hook(vars.win_ptr, KeyPress, KeyPressMask, &input_manager, &vars);
+	mlx_hook(vars.win_ptr, DestroyNotify, StructureNotifyMask, &close_windows,
+		&vars);
 	mlx_loop_hook(vars.mlx_ptr, update_render, &vars);
 	mlx_loop(vars.mlx_ptr);
-	free_all_image(&vars);
-	free_grid(&vars);
 	return (0);
 }

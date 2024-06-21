@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 18:03:59 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/21 02:02:39 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/21 06:07:10 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,23 @@ void	free_all_image(t_vars *vars)
 	mlx_destroy_image(vars->mlx_ptr, vars->background.img);
 	mlx_destroy_image(vars->mlx_ptr, vars->exit.img);
 	mlx_destroy_image(vars->mlx_ptr, vars->collectibles.img);
+	mlx_destroy_image(vars->mlx_ptr, vars->s_player.DOWN1.img);
+	mlx_destroy_image(vars->mlx_ptr, vars->s_player.DOWN2.img);
+	mlx_destroy_image(vars->mlx_ptr, vars->s_player.UP1.img);
+	mlx_destroy_image(vars->mlx_ptr, vars->s_player.UP2.img);
 }
 
 void	free_final(t_vars *vars)
+{
+	mlx_destroy_window(vars->mlx_ptr, vars->win_ptr);
+	free_all_image(vars);
+	free_grid(vars);
+	mlx_destroy_display(vars->mlx_ptr);
+	free(vars->mlx_ptr);
+	exit(0);
+}
+
+int	close_windows(t_vars *vars)
 {
 	free_all_image(vars);
 	free_grid(vars);
@@ -47,4 +61,5 @@ void	free_final(t_vars *vars)
 	mlx_destroy_window(vars->mlx_ptr, vars->win_ptr);
 	free(vars->mlx_ptr);
 	exit(0);
+	return (0);
 }
