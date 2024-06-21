@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/21 00:45:21 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/21 02:03:14 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,6 @@ void	put_to_image(t_vars *vars, t_point s, char type);
 
 void	free_grid(t_vars *vars);
 void	free_all_image(t_vars *vars);
+void	free_final(t_vars *vars);
 
 #endif

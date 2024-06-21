@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 18:03:59 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/20 18:10:40 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/21 02:02:39 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,14 @@ void	free_all_image(t_vars *vars)
 	mlx_destroy_image(vars->mlx_ptr, vars->background.img);
 	mlx_destroy_image(vars->mlx_ptr, vars->exit.img);
 	mlx_destroy_image(vars->mlx_ptr, vars->collectibles.img);
+}
+
+void	free_final(t_vars *vars)
+{
+	free_all_image(vars);
+	free_grid(vars);
+	mlx_destroy_display(vars->mlx_ptr);
+	mlx_destroy_window(vars->mlx_ptr, vars->win_ptr);
+	free(vars->mlx_ptr);
+	exit(0);
 }

@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 04:57:30 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/21 01:51:55 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/21 02:16:08 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	init_game(t_vars *vars, char *av)
 	vars->elems.NB_COLLECTIBLES = 0;
 	vars->elems.NB_START = 0;
 	vars->elems.NB_EXIT = 0;
+	vars->elems.C_acces = 0;
+	vars->elems.exit_unlock = 0;
 	vars->player.start_p = (t_point){0, 0};
 }
 

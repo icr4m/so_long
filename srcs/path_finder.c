@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:38:14 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/21 01:52:03 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/21 02:11:40 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@ void	path_finder(t_vars *vars, t_point pos)
 		return ;
 	vars->map.cell[pos.co_y][pos.co_x].value = 1;
 	if (vars->map.grid[pos.co_y][pos.co_x] == COLLECT)
-		vars->elems.C_FOUND++;
+		vars->elems.C_acces++;
 	if (vars->map.grid[pos.co_y][pos.co_x] == EXIT)
 		vars->elems.EXIT_FOUND++;
 	if (vars->elems.EXIT_FOUND == 1
-		&& vars->elems.C_FOUND == vars->elems.NB_COLLECTIBLES)
+		&& vars->elems.C_acces == vars->elems.NB_COLLECTIBLES)
 	{
 		vars->elems.IS_WIN = 1;
 		return ;

@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:47:19 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/21 00:45:24 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/21 02:14:04 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,8 @@ typedef struct s_elems
 	size_t			EXIT_FOUND;
 	size_t			C_FOUND;
 	size_t			IS_WIN;
+	size_t			C_acces;
+	size_t			exit_unlock;
 }					t_elems;
 
 typedef struct s_vars
