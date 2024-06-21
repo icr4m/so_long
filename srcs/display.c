@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 15:34:13 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/21 01:55:35 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/21 03:22:40 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,11 @@ void	put_to_image(t_vars *vars, t_point s, char type)
 	if (type == FLOOR)
 		mlx_put_image_to_window(vars->mlx_ptr, vars->win_ptr,
 			vars->background.img, s.co_x, s.co_y);
+}
+
+void	draw_player(t_vars *vars)
+{
+	mlx_put_image_to_window(vars->mlx_ptr, vars->win_ptr,
+		vars->s_player.DOWN1.img, vars->player.co.co_x * SIZE,
+		vars->player.co.co_y * SIZE);
 }

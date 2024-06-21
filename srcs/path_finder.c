@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:38:14 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/21 02:11:40 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/21 03:31:17 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ void	find_map_error(t_vars *vars)
 		error_map("No start found.");
 	if (vars->elems.NB_START > 1)
 		error_map("Too much start found.");
+	if (vars->elems.NB_COLLECTIBLES <= 0)
+		error_map("No collectibles found");
 }
 
 void	path_finder(t_vars *vars, t_point pos)
@@ -63,22 +65,8 @@ void	path_finder(t_vars *vars, t_point pos)
 		vars->elems.C_acces++;
 	if (vars->map.grid[pos.co_y][pos.co_x] == EXIT)
 		vars->elems.EXIT_FOUND++;
-	if (vars->elems.EXIT_FOUND == 1
-		&& vars->elems.C_acces == vars->elems.NB_COLLECTIBLES)
-	{
-		vars->elems.IS_WIN = 1;
-		return ;
-	}
 	path_finder(vars, (t_point){pos.co_x + 1, pos.co_y});
 	path_finder(vars, (t_point){pos.co_x - 1, pos.co_y});
 	path_finder(vars, (t_point){pos.co_x, pos.co_y + 1});
 	path_finder(vars, (t_point){pos.co_x, pos.co_y - 1});
-}
-
-void	is_win(t_vars *vars)
-{
-	if (vars->elems.IS_WIN == 1)
-		ft_printf(Green "Map parfaite\n" White);
-	else
-		ft_printf(Red "No path find\n" White);
 }
