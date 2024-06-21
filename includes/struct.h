@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:47:19 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/21 02:14:04 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/21 04:53:45 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,6 @@ typedef enum e_key
 	DOWN2 = 115,
 	ECHAP = 65307
 }					t_key;
-
-typedef enum d_key
-{
-	D_UP,
-	D_DOWN
-}					direction;
 
 // typedef struct
 typedef struct s_point
@@ -56,7 +50,7 @@ typedef struct s_player
 {
 	t_point			start_p;
 	t_point			co;
-	direction		d;
+	int				d;
 }					t_player;
 
 typedef struct s_sprite_player
@@ -66,13 +60,6 @@ typedef struct s_sprite_player
 	t_sprite		DOWN1;
 	t_sprite		DOWN2;
 }					t_sprite_player;
-
-typedef struct s_animation
-{
-	void			*current;
-	void			*frame_1;
-	void			*frame_2;
-}					t_animation;
 
 typedef struct s_map
 {
@@ -108,8 +95,6 @@ typedef struct s_vars
 	t_sprite		collectibles;
 	t_sprite_player	s_player;
 	t_player		player;
-	t_animation		anim_D;
-	t_animation		anim_U;
 }					t_vars;
 
 #endif

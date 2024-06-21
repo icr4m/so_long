@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 15:48:18 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/21 03:38:52 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/21 04:59:57 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,12 @@ int	input_manager(int keynb, t_vars *vars)
 		move_right(vars, (t_point){vars->player.co.co_x + 1,
 			vars->player.co.co_y});
 	if (keynb == LEFT || keynb == LEFT2)
-		move_up(vars, (t_point){vars->player.co.co_x - 1,
+		move_left(vars, (t_point){vars->player.co.co_x - 1,
 			vars->player.co.co_y});
 	if (keynb == DOWN || keynb == DOWN2)
-		move_up(vars, (t_point){vars->player.co.co_x, vars->player.co.co_y
+		move_down(vars, (t_point){vars->player.co.co_x, vars->player.co.co_y
 			+ 1});
+	printf("%d\n", vars->player.d);
 	return (0);
 }
 
@@ -52,5 +53,6 @@ int	update_render(t_vars *vars)
 		error_map("masterclass");
 	draw_map(vars);
 	draw_player(vars);
+	usleep(80500);
 	return (0);
 }
