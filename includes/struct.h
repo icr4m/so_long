@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:47:19 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/23 17:26:17 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 20:07:20 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_player
 	t_point			start_p;
 	t_point			co;
 	int				d;
+	int				nb_moves;
 }					t_player;
 
 typedef struct s_sprite_player

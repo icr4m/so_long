@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 15:48:18 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/23 17:26:51 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 21:38:13 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	error_map(char *str, t_vars *vars)
 {
 	free_grid(vars);
+	free_all_image(vars);
 	ft_printf(RED "Error: " WHITE);
 	ft_printf("%s \n", str);
 	exit(1);
@@ -51,10 +52,15 @@ int	input_manager(int keynb, t_vars *vars)
 
 int	update_render(t_vars *vars)
 {
+	char	*tmp;
+
 	if (vars->elems.is_win == 1)
 		free_final(vars);
 	draw_map(vars);
 	draw_player(vars);
+	tmp = ft_itoa(vars->player.nb_moves);
+	mlx_string_put(vars->mlx_ptr, vars->win_ptr, 42, 42, 16711884, tmp);
+	free(tmp);
 	usleep(65500);
 	return (0);
 }

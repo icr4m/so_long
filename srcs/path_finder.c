@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:38:14 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/23 17:33:54 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 20:03:10 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,14 @@ void	map_checker(t_vars *vars)
 			{
 				vars->elems.nb_start++;
 				vars->player.start_p = (t_point){x, y};
-				vars->player.co = vars->player.start_p;
 			}
-			if (vars->map.grid[y][x] == EXIT)
+			else if (vars->map.grid[y][x] == EXIT)
 				vars->elems.nb_exit++;
-			if (vars->map.grid[y][x] == COLLECT)
+			else if (vars->map.grid[y][x] == COLLECT)
 				vars->elems.nb_collectibles++;
+			else if (vars->map.grid[y][x] != WALL
+				&& vars->map.grid[y][x] != FLOOR)
+				error_map("Unknown character in the map.", vars);
 			x++;
 		}
 		y++;
@@ -41,6 +43,11 @@ void	map_checker(t_vars *vars)
 
 void	find_map_error(t_vars *vars)
 {
+	vars->player.co = vars->player.start_p;
+	if (vars->map.nb_l >= 16)
+		error_map("Map is too big.", vars);
+	if (vars->map.nb_c >= 31)
+		error_map("Map is too big.", vars);
 	if (vars->elems.nb_exit < 1)
 		error_map("No exit found.", vars);
 	if (vars->elems.nb_exit > 1)
@@ -75,5 +82,5 @@ void	path_finder(t_vars *vars, t_point pos)
 void	path_checker(t_vars *vars)
 {
 	if (vars->elems.exit_found != 1)
-		error_map("No path found", vars);
+		error_map("No path found.", vars);
 }

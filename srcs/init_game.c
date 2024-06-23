@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 04:57:30 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/23 17:27:30 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 20:15:30 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	init_game(t_vars *vars, char *av)
 	vars->elems.exit_unlock = 0;
 	vars->player.start_p = (t_point){0, 0};
 	vars->player.d = 0;
+	vars->player.nb_moves = 0;
 }
 
 void	new_window(t_vars *vars)
@@ -46,4 +47,5 @@ void	start_game(t_vars *vars, char *av)
 	path_checker(vars);
 	new_window(vars);
 	load_sprite(vars);
+	load_player_sprites(vars);
 }

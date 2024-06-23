@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 18:03:59 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/23 17:39:09 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 20:44:38 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,21 @@ void	free_grid(t_vars *vars)
 
 void	free_all_image(t_vars *vars)
 {
-	if (vars->wall.img != NULL)
+	if (vars->wall.img)
 		mlx_destroy_image(vars->mlx_ptr, vars->wall.img);
-	if (vars->background.img != NULL)
+	if (vars->background.img)
 		mlx_destroy_image(vars->mlx_ptr, vars->background.img);
-	if (vars->exit.img != NULL)
+	if (vars->exit.img)
 		mlx_destroy_image(vars->mlx_ptr, vars->exit.img);
-	if (vars->collectibles.img != NULL)
+	if (vars->collectibles.img)
 		mlx_destroy_image(vars->mlx_ptr, vars->collectibles.img);
-	if (vars->s_player.down1.img != NULL)
+	if (vars->s_player.down1.img)
 		mlx_destroy_image(vars->mlx_ptr, vars->s_player.down1.img);
-	if (vars->s_player.down2.img != NULL)
+	if (vars->s_player.down2.img)
 		mlx_destroy_image(vars->mlx_ptr, vars->s_player.down2.img);
-	if (vars->s_player.up1.img != NULL)
+	if (vars->s_player.up1.img)
 		mlx_destroy_image(vars->mlx_ptr, vars->s_player.up1.img);
-	if (vars->s_player.up2.img != NULL)
+	if (vars->s_player.up2.img)
 		mlx_destroy_image(vars->mlx_ptr, vars->s_player.up2.img);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 18:11:53 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/23 17:30:29 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 20:06:19 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	move_up(t_vars *vars, t_point pos)
 {
 	vars->player.d = 1;
+	vars->player.nb_moves++;
 	if (pos.co_x < vars->map.nb_c && pos.co_y < vars->map.nb_l)
 	{
 		if (vars->map.grid[pos.co_y][pos.co_x] == COLLECT)
@@ -39,6 +40,7 @@ void	move_up(t_vars *vars, t_point pos)
 void	move_down(t_vars *vars, t_point pos)
 {
 	vars->player.d = 0;
+	vars->player.nb_moves++;
 	if (pos.co_x < vars->map.nb_c && pos.co_y < vars->map.nb_l)
 	{
 		if (vars->map.grid[pos.co_y][pos.co_x] == COLLECT)
@@ -63,6 +65,7 @@ void	move_down(t_vars *vars, t_point pos)
 void	move_right(t_vars *vars, t_point pos)
 {
 	vars->player.d = 1;
+	vars->player.nb_moves++;
 	if (pos.co_x < vars->map.nb_c && pos.co_y < vars->map.nb_l)
 	{
 		if (vars->map.grid[pos.co_y][pos.co_x] == COLLECT)
@@ -87,6 +90,7 @@ void	move_right(t_vars *vars, t_point pos)
 void	move_left(t_vars *vars, t_point pos)
 {
 	vars->player.d = 0;
+	vars->player.nb_moves++;
 	if (pos.co_x < vars->map.nb_c && pos.co_y < vars->map.nb_l)
 	{
 		if (vars->map.grid[pos.co_y][pos.co_x] == COLLECT)
