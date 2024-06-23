@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:47:19 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/23 16:20:11 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 17:26:17 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ typedef struct s_player
 
 typedef struct s_sprite_player
 {
-	t_sprite		UP1;
-	t_sprite		UP2;
-	t_sprite		DOWN1;
-	t_sprite		DOWN2;
+	t_sprite		up1;
+	t_sprite		up2;
+	t_sprite		down1;
+	t_sprite		down2;
 }					t_sprite_player;
 
 typedef struct s_map
@@ -68,13 +68,13 @@ typedef struct s_map
 
 typedef struct s_elems
 {
-	size_t			NB_EXIT;
-	size_t			NB_START;
-	size_t			NB_COLLECTIBLES;
-	size_t			EXIT_FOUND;
-	size_t			C_FOUND;
-	size_t			IS_WIN;
-	size_t			C_acces;
+	size_t			nb_exit;
+	size_t			nb_start;
+	size_t			nb_collectibles;
+	size_t			exit_found;
+	size_t			c_found;
+	size_t			is_win;
+	size_t			c_acces;
 	size_t			exit_unlock;
 }					t_elems;
 

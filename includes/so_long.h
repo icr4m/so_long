@@ -6,17 +6,16 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/23 16:45:53 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 17:23:43 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# define White "\033[0;37m"
-# define Green "\033[0;32m"
-# define Red "\033[0;31m"
-# define Purple "\033[0;35m"
+# define WHITE "\033[0;37m"
+# define GREEN "\033[0;32m"
+# define RED "\033[0;31m"
 
 # define WALL '1'
 # define FLOOR '0'
@@ -41,13 +40,15 @@
 # include <stdlib.h>
 # include <string.h>
 
-// functions
+// Functions
+
+// INIT GAME
 void	init_game(t_vars *vars, char *av);
 void	new_window(t_vars *vars);
+void	start_game(t_vars *vars, char *av);
 
 void	error_map(char *str, t_vars *vars);
 void	error_arg(char *str, t_vars *vars);
-void	update_player(t_vars *vars);
 int		input_manager(int keynb, t_vars *vars);
 int		update_render(t_vars *vars);
 
@@ -64,6 +65,7 @@ void	check_wall(t_vars *vars);
 void	map_checker(t_vars *vars);
 void	find_map_error(t_vars *vars);
 void	path_finder(t_vars *vars, t_point pos);
+void	path_checker(t_vars *vars);
 
 void	load_sprite(t_vars *vars);
 
