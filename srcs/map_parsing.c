@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:16:24 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/23 16:27:48 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 17:16:30 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,15 @@ int	map_parsing(t_vars *vars)
 	line = get_next_line(vars->map.fd);
 	vars->map.nb_c = ft_linelen(line);
 	free(line);
-	while (line = get_next_line(vars->map.fd))
+	line = get_next_line(vars->map.fd);
+	while (line)
 	{
 		if (ft_linelen(line) != vars->map.nb_c)
 			error_map("Map is not rectangular.", vars);
 		count++;
 		free(line);
+		line = get_next_line(vars->map.fd);
 	}
-	free(line);
 	close(vars->map.fd);
 	vars->map.nb_l = count;
 	return (1);
@@ -61,8 +62,8 @@ void	fill_grid(t_vars *vars)
 
 void	check_wall(t_vars *vars)
 {
-	size_t x;
-	size_t y;
+	size_t	x;
+	size_t	y;
 
 	x = 0;
 	y = 0;

@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 18:03:59 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/23 16:42:47 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 17:39:09 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,14 @@ void	free_all_image(t_vars *vars)
 		mlx_destroy_image(vars->mlx_ptr, vars->exit.img);
 	if (vars->collectibles.img != NULL)
 		mlx_destroy_image(vars->mlx_ptr, vars->collectibles.img);
-	if (vars->s_player.DOWN1.img != NULL)
-		mlx_destroy_image(vars->mlx_ptr, vars->s_player.DOWN1.img);
-	if (vars->s_player.DOWN2.img != NULL)
-		mlx_destroy_image(vars->mlx_ptr, vars->s_player.DOWN2.img);
-	if (vars->s_player.UP1.img != NULL)
-		mlx_destroy_image(vars->mlx_ptr, vars->s_player.UP1.img);
-	if (vars->s_player.UP2.img != NULL)
-		mlx_destroy_image(vars->mlx_ptr, vars->s_player.UP2.img);
+	if (vars->s_player.down1.img != NULL)
+		mlx_destroy_image(vars->mlx_ptr, vars->s_player.down1.img);
+	if (vars->s_player.down2.img != NULL)
+		mlx_destroy_image(vars->mlx_ptr, vars->s_player.down2.img);
+	if (vars->s_player.up1.img != NULL)
+		mlx_destroy_image(vars->mlx_ptr, vars->s_player.up1.img);
+	if (vars->s_player.up2.img != NULL)
+		mlx_destroy_image(vars->mlx_ptr, vars->s_player.up2.img);
 }
 
 void	free_final(t_vars *vars)

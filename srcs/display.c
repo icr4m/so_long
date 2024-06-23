@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 15:34:13 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/21 04:53:51 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 17:38:52 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,24 +62,22 @@ void	draw_player(t_vars *vars)
 	{
 		if (frame)
 			mlx_put_image_to_window(vars->mlx_ptr, vars->win_ptr,
-				vars->s_player.DOWN1.img, vars->player.co.co_x * SIZE,
+				vars->s_player.down1.img, vars->player.co.co_x * SIZE,
 				vars->player.co.co_y * SIZE);
 		else
 			mlx_put_image_to_window(vars->mlx_ptr, vars->win_ptr,
-				vars->s_player.DOWN2.img, vars->player.co.co_x * SIZE,
+				vars->s_player.down2.img, vars->player.co.co_x * SIZE,
 				vars->player.co.co_y * SIZE);
 	}
 	if (vars->player.d == 1)
 	{
 		if (frame)
-		{
 			mlx_put_image_to_window(vars->mlx_ptr, vars->win_ptr,
-				vars->s_player.UP1.img, vars->player.co.co_x * SIZE,
+				vars->s_player.up1.img, vars->player.co.co_x * SIZE,
 				vars->player.co.co_y * SIZE);
-		}
 		else
 			mlx_put_image_to_window(vars->mlx_ptr, vars->win_ptr,
-				vars->s_player.UP2.img, vars->player.co.co_x * SIZE,
+				vars->s_player.up2.img, vars->player.co.co_x * SIZE,
 				vars->player.co.co_y * SIZE);
 	}
 	frame = !frame;

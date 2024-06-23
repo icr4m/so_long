@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 15:48:18 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/23 16:46:01 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 17:26:51 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,16 @@
 void	error_map(char *str, t_vars *vars)
 {
 	free_grid(vars);
-	ft_printf(Red "Error: " White);
+	ft_printf(RED "Error: " WHITE);
 	ft_printf("%s \n", str);
 	exit(1);
 }
 
 void	error_arg(char *str, t_vars *vars)
 {
-	ft_printf(Red "Error: " White);
+	ft_printf(RED "Error: " WHITE);
 	ft_printf("%s \n", str);
 	exit(1);
-}
-
-void	update_player(t_vars *vars)
-{
-	vars->player.co = vars->player.start_p;
 }
 
 int	input_manager(int keynb, t_vars *vars)
@@ -56,7 +51,7 @@ int	input_manager(int keynb, t_vars *vars)
 
 int	update_render(t_vars *vars)
 {
-	if (vars->elems.IS_WIN == 1)
+	if (vars->elems.is_win == 1)
 		free_final(vars);
 	draw_map(vars);
 	draw_player(vars);

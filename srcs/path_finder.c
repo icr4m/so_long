@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:38:14 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/23 16:28:40 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 17:33:54 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,14 @@ void	map_checker(t_vars *vars)
 		{
 			if (vars->map.grid[y][x] == START)
 			{
-				vars->elems.NB_START++;
+				vars->elems.nb_start++;
 				vars->player.start_p = (t_point){x, y};
+				vars->player.co = vars->player.start_p;
 			}
 			if (vars->map.grid[y][x] == EXIT)
-				vars->elems.NB_EXIT++;
+				vars->elems.nb_exit++;
 			if (vars->map.grid[y][x] == COLLECT)
-				vars->elems.NB_COLLECTIBLES++;
+				vars->elems.nb_collectibles++;
 			x++;
 		}
 		y++;
@@ -40,15 +41,15 @@ void	map_checker(t_vars *vars)
 
 void	find_map_error(t_vars *vars)
 {
-	if (vars->elems.NB_EXIT < 1)
+	if (vars->elems.nb_exit < 1)
 		error_map("No exit found.", vars);
-	if (vars->elems.NB_EXIT > 1)
+	if (vars->elems.nb_exit > 1)
 		error_map("Too much exit found.", vars);
-	if (vars->elems.NB_START < 1)
+	if (vars->elems.nb_start < 1)
 		error_map("No start found.", vars);
-	if (vars->elems.NB_START > 1)
+	if (vars->elems.nb_start > 1)
 		error_map("Too much start found.", vars);
-	if (vars->elems.NB_COLLECTIBLES <= 0)
+	if (vars->elems.nb_collectibles <= 0)
 		error_map("No collectibles found", vars);
 }
 
@@ -62,11 +63,17 @@ void	path_finder(t_vars *vars, t_point pos)
 		return ;
 	vars->map.cell[pos.co_y][pos.co_x] = 1;
 	if (vars->map.grid[pos.co_y][pos.co_x] == COLLECT)
-		vars->elems.C_acces++;
+		vars->elems.c_acces++;
 	if (vars->map.grid[pos.co_y][pos.co_x] == EXIT)
-		vars->elems.EXIT_FOUND++;
+		vars->elems.exit_found++;
 	path_finder(vars, (t_point){pos.co_x + 1, pos.co_y});
 	path_finder(vars, (t_point){pos.co_x - 1, pos.co_y});
 	path_finder(vars, (t_point){pos.co_x, pos.co_y + 1});
 	path_finder(vars, (t_point){pos.co_x, pos.co_y - 1});
+}
+
+void	path_checker(t_vars *vars)
+{
+	if (vars->elems.exit_found != 1)
+		error_map("No path found", vars);
 }
