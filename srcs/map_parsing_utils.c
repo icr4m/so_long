@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:57:25 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/23 17:33:48 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 21:43:56 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,21 @@ void	allocate_grid_cell(t_vars *vars, t_point *pos)
 	pos->co_y = 0;
 	vars->map.fd = open(vars->map.path, O_RDONLY);
 	vars->map.grid = malloc(vars->map.nb_l * sizeof(char *) + 1);
+	if (!vars->map.grid)
+		error_map(FAILED_ALLOC, vars);
 	vars->map.cell = malloc(vars->map.nb_l * sizeof(int *));
+	if (!vars->map.cell)
+		error_map(FAILED_ALLOC, vars);
 }
 
 void	allocate_line(t_vars *vars, t_point *pos)
 {
 	vars->map.grid[pos->co_y] = malloc((vars->map.nb_c) * sizeof(char) + 1);
+	if (!vars->map.grid[pos->co_y])
+		error_map(FAILED_ALLOC, vars);
 	vars->map.cell[pos->co_y] = malloc((vars->map.nb_c) * sizeof(int));
+	if (!vars->map.cell[pos->co_x])
+		error_map(FAILED_ALLOC, vars);
 }
 
 void	fill_line_cell(char *line, t_vars *vars, t_point *pos)

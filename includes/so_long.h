@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/23 21:24:35 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 21:53:19 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@
 # define EXIT 'E'
 # define COLLECT 'C'
 
-# define PLAYER_XPM_ERROR "player.xpm fail to load"
-# define GROUND_XPM_ERROR "ground.xpm fail to load"
-# define WALL_XPM_ERROR "wall.xpm fail to load"
-# define COLLECT_XPM_ERROR "collectibles.xpm fail to load"
-# define EXIT_XPM_ERROR "exit.xpm fail to load"
+# define FAILED_ALLOC "Malloc failed."
+# define PLAYER_XPM_ERROR "player.xpm fail to load."
+# define GROUND_XPM_ERROR "ground.xpm fail to load."
+# define WALL_XPM_ERROR "wall.xpm fail to load."
+# define COLLECT_XPM_ERROR "collectibles.xpm fail to load."
+# define EXIT_XPM_ERROR "exit.xpm fail to load."
 
 # ifndef SIZE
 #  define SIZE 64
@@ -100,6 +101,7 @@ void				move_left(t_vars *vars, t_point pos);
 
 // SO LONG UTILS
 void				error_map(char *str, t_vars *vars);
+void				error_img(char *str, t_vars *vars);
 void				error_arg(char *str, t_vars *vars);
 int					input_manager(int keynb, t_vars *vars);
 int					update_render(t_vars *vars);
