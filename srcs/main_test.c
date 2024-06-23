@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 12:31:43 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/21 05:52:32 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 16:46:19 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ int	main(int ac, char **av)
 	t_vars	vars;
 
 	if (ac < 2)
-		error_map("Usage : ./so_long <map.ber>");
+		error_arg("Usage : ./so_long <map.ber>", &vars);
 	if (ac > 2)
-		error_map("Too many args..");
+		error_arg("Too many args..", &vars);
 	if (ac == 2 && !check_ber_map(av[1]))
-		error_map("Wrong File or Map Name.");
+		error_arg("Wrong File or Map Name.", &vars);
 	init_game(&vars, av[1]);
 	map_parsing(&vars);
 	fill_grid(&vars);

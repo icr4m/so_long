@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:47:19 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/21 05:40:19 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 16:20:11 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,6 @@ typedef struct s_point
 	size_t			co_x;
 	size_t			co_y;
 }					t_point;
-
-typedef struct s_cell
-{
-	char			type;
-	int				value;
-}					t_cell;
 
 typedef struct s_sprite
 {
@@ -67,7 +61,7 @@ typedef struct s_map
 	char			*path;
 	int				fd;
 	char			**grid;
-	t_cell			**cell;
+	int				**cell;
 	size_t			nb_c;
 	size_t			nb_l;
 }					t_map;

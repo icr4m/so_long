@@ -22,7 +22,7 @@ MLX_FLAGS = -Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11
 all: $(NAME)
 
 $(NAME): $(OBJ) $(GNL_OBJ) $(PRINTF_OBJ)
-	gcc -g3 $(CFLAGS) $^ $(MLX_FLAGS) $(INCLUDES) -o $(NAME)
+	gcc $(CFLAGS) $^ $(MLX_FLAGS) $(INCLUDES) -o $(NAME)
 
 .c.o:
 	gcc $(CCFLAGS) $(MLX_FLAGS) $(INCLUDES) -Iincludes -c $< -o ${<:.c=.o}

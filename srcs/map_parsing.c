@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:16:24 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/21 00:55:31 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 16:27:48 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ int	map_parsing(t_vars *vars)
 	count = 1;
 	vars->map.fd = open(vars->map.path, O_RDONLY);
 	if (vars->map.fd < 0)
-		error_map("Map not found.");
+		error_map("Map not found.", vars);
 	line = get_next_line(vars->map.fd);
 	vars->map.nb_c = ft_linelen(line);
 	free(line);
 	while (line = get_next_line(vars->map.fd))
 	{
 		if (ft_linelen(line) != vars->map.nb_c)
-			error_map("Map is not rectangular.");
+			error_map("Map is not rectangular.", vars);
 		count++;
 		free(line);
 	}
@@ -69,17 +69,17 @@ void	check_wall(t_vars *vars)
 	while (x < vars->map.nb_l)
 	{
 		if (vars->map.grid[x][y] != WALL)
-			error_map("Map is not encased.");
+			error_map("Map is not encased.", vars);
 		if (vars->map.grid[x][vars->map.nb_c - 1] != WALL)
-			error_map("Map is not encased.");
+			error_map("Map is not encased.", vars);
 		x++;
 	}
 	while (y < vars->map.nb_c)
 	{
 		if (vars->map.grid[0][y] != WALL)
-			error_map("Map is not encased.");
+			error_map("Map is not encased.", vars);
 		if (vars->map.grid[vars->map.nb_l - 1][y] != WALL)
-			error_map("Map is not encased.");
+			error_map("Map is not encased.", vars);
 		y++;
 	}
 }

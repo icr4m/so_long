@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/21 05:51:59 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 16:45:53 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@
 void	init_game(t_vars *vars, char *av);
 void	new_window(t_vars *vars);
 
-void	error_map(char *str);
-
+void	error_map(char *str, t_vars *vars);
+void	error_arg(char *str, t_vars *vars);
 void	update_player(t_vars *vars);
 int		input_manager(int keynb, t_vars *vars);
 int		update_render(t_vars *vars);

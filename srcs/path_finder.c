@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:38:14 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/21 03:31:17 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 16:28:40 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,15 @@ void	map_checker(t_vars *vars)
 void	find_map_error(t_vars *vars)
 {
 	if (vars->elems.NB_EXIT < 1)
-		error_map("No exit found.");
+		error_map("No exit found.", vars);
 	if (vars->elems.NB_EXIT > 1)
-		error_map("Too much exit found.");
+		error_map("Too much exit found.", vars);
 	if (vars->elems.NB_START < 1)
-		error_map("No start found.");
+		error_map("No start found.", vars);
 	if (vars->elems.NB_START > 1)
-		error_map("Too much start found.");
+		error_map("Too much start found.", vars);
 	if (vars->elems.NB_COLLECTIBLES <= 0)
-		error_map("No collectibles found");
+		error_map("No collectibles found", vars);
 }
 
 void	path_finder(t_vars *vars, t_point pos)
@@ -58,9 +58,9 @@ void	path_finder(t_vars *vars, t_point pos)
 		|| pos.co_y < 0)
 		return ;
 	if (vars->map.grid[pos.co_y][pos.co_x] == WALL
-		|| vars->map.cell[pos.co_y][pos.co_x].value == 1)
+		|| vars->map.cell[pos.co_y][pos.co_x] == 1)
 		return ;
-	vars->map.cell[pos.co_y][pos.co_x].value = 1;
+	vars->map.cell[pos.co_y][pos.co_x] = 1;
 	if (vars->map.grid[pos.co_y][pos.co_x] == COLLECT)
 		vars->elems.C_acces++;
 	if (vars->map.grid[pos.co_y][pos.co_x] == EXIT)

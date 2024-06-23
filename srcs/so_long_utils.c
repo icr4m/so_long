@@ -6,13 +6,21 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 15:48:18 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/21 06:17:33 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 16:46:01 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	error_map(char *str)
+void	error_map(char *str, t_vars *vars)
+{
+	free_grid(vars);
+	ft_printf(Red "Error: " White);
+	ft_printf("%s \n", str);
+	exit(1);
+}
+
+void	error_arg(char *str, t_vars *vars)
 {
 	ft_printf(Red "Error: " White);
 	ft_printf("%s \n", str);
@@ -52,6 +60,6 @@ int	update_render(t_vars *vars)
 		free_final(vars);
 	draw_map(vars);
 	draw_player(vars);
-	usleep(80500);
+	usleep(65500);
 	return (0);
 }
