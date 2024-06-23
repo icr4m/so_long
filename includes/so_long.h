@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/23 21:53:19 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 22:38:58 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int					close_windows(t_vars *vars);
 void				init_game(t_vars *vars, char *av);
 void				new_window(t_vars *vars);
 void				start_game(t_vars *vars, char *av);
+void				free_sprite(char *str, t_vars *vars, int nb);
 
 // ITOA
 static unsigned int	get_abs(int n);
