@@ -8,6 +8,7 @@ PRINTF_SRC = $(addprefix ft_printf/, ft_printf_utils.c ft_printf.c ft_put_printf
 OBJ =  $(SRC:.c=.o)
 GNL_OBJ := $(GNL_SRC:.c=.o)
 PRINTF_OBJ := $(PRINTF_SRC:.c=.o)
+MLX_PATH = ./mlx
 
 # Compilation
 CFLAGS = -Wall -Wextra -Werror
@@ -16,16 +17,20 @@ CFLAGS = -Wall -Wextra -Werror
 INCLUDES = -I/usr/include -Imlx
 
 # Lier X11 et MLX
-MLX_FLAGS = -Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11
+MLX_FLAGS =  $(MLX_PATH)/libmlx.a $(MLX_PATH)/libmlx_Linux.a -lX11 -lXext
 
 # Rules
-all: $(NAME)
+all: $(MLX_PATH)/libmlx.a $(NAME)
 
 $(NAME): $(OBJ) $(GNL_OBJ) $(PRINTF_OBJ)
-	gcc $(CFLAGS) $^ $(MLX_FLAGS) $(INCLUDES) -o $(NAME)
+	make  $(MLX_PATH)
+	cc $(CFLAGS) $^ $(MLX_FLAGS) $(INCLUDES) -o $(NAME)
+
+$(MLX_PATH)/libmlx.a:
+	make -C $(MLX_PATH)
 
 .c.o:
-	gcc $(CCFLAGS) $(MLX_FLAGS) $(INCLUDES) -Iincludes -c $< -o ${<:.c=.o}
+	cc $(CCFLAGS) $(MLX_FLAGS) $(INCLUDES) -Iincludes -c $< -o ${<:.c=.o}
 
 clean:
 	rm -rf $(OBJ) $(GNL_OBJ) $(PRINTF_OBJ)
@@ -34,3 +39,5 @@ fclean: clean
 		rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

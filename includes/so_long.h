@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:52:28 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/23 17:23:43 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/23 17:51:44 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,45 +42,53 @@
 
 // Functions
 
+// DISPLAY
+void	draw_map(t_vars *vars);
+void	put_to_image(t_vars *vars, t_point s, char type);
+void	draw_player(t_vars *vars);
+
+// FREE
+void	free_grid(t_vars *vars);
+void	free_all_image(t_vars *vars);
+void	free_final(t_vars *vars);
+int		close_windows(t_vars *vars);
+
 // INIT GAME
 void	init_game(t_vars *vars, char *av);
 void	new_window(t_vars *vars);
 void	start_game(t_vars *vars, char *av);
 
-void	error_map(char *str, t_vars *vars);
-void	error_arg(char *str, t_vars *vars);
-int		input_manager(int keynb, t_vars *vars);
-int		update_render(t_vars *vars);
+// LOAD
+void	load_sprite(t_vars *vars);
 
+// PARSING UTILS
 int		check_ber_map(char *map);
 size_t	ft_linelen(char *s);
 void	allocate_grid_cell(t_vars *vars, t_point *pos);
 void	allocate_line(t_vars *vars, t_point *pos);
 void	fill_line_cell(char *line, t_vars *vars, t_point *pos);
 
+// MAP PARSING
 int		map_parsing(t_vars *vars);
 void	fill_grid(t_vars *vars);
 void	check_wall(t_vars *vars);
 
+// PATH FINDER
 void	map_checker(t_vars *vars);
 void	find_map_error(t_vars *vars);
 void	path_finder(t_vars *vars, t_point pos);
 void	path_checker(t_vars *vars);
 
-void	load_sprite(t_vars *vars);
-
-void	draw_map(t_vars *vars);
-void	put_to_image(t_vars *vars, t_point s, char type);
-void	draw_player(t_vars *vars);
-
-void	free_grid(t_vars *vars);
-void	free_all_image(t_vars *vars);
-void	free_final(t_vars *vars);
-int		close_windows(t_vars *vars);
-
+// PLAYER MOVE
 void	move_up(t_vars *vars, t_point pos);
 void	move_down(t_vars *vars, t_point pos);
 void	move_right(t_vars *vars, t_point pos);
 void	move_left(t_vars *vars, t_point pos);
+
+// SO LONG UTILS
+void	error_map(char *str, t_vars *vars);
+void	error_arg(char *str, t_vars *vars);
+int		input_manager(int keynb, t_vars *vars);
+int		update_render(t_vars *vars);
 
 #endif
