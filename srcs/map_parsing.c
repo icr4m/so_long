@@ -6,31 +6,41 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:16:24 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/24 13:57:35 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/24 15:28:58 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	map_parsing(t_vars *vars)
+static void	read_and_validate_first_line(t_vars *vars)
 {
 	char	*line;
-	size_t	count;
 
-	count = 1;
 	vars->map.fd = open(vars->map.path, O_RDONLY);
 	if (vars->map.fd < 0)
 		error_arg("Map not found.", vars);
 	line = get_next_line(vars->map.fd);
 	if (!line)
+	{
+		close(vars->map.fd);
 		error_arg("Map is empty or could not be read.", vars);
+	}
 	vars->map.nb_c = ft_linelen(line);
 	if (vars->map.nb_c == 0)
 	{
 		free(line);
+		close(vars->map.fd);
 		error_arg("Map contains an empty line.", vars);
 	}
 	free(line);
+}
+
+static void	validate_map_lines(t_vars *vars)
+{
+	char	*line;
+	size_t	count;
+
+	count = 1;
 	line = get_next_line(vars->map.fd);
 	while (line)
 	{
@@ -52,6 +62,12 @@ int	map_parsing(t_vars *vars)
 	}
 	close(vars->map.fd);
 	vars->map.nb_l = count;
+}
+
+int	map_parsing(t_vars *vars)
+{
+	read_and_validate_first_line(vars);
+	validate_map_lines(vars);
 	return (1);
 }
 
