@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 15:48:18 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/23 22:17:35 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/24 11:55:21 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 void	error_map(char *str, t_vars *vars)
 {
 	free_grid(vars);
-	ft_printf(RED "Error: " WHITE);
-	ft_printf("%s \n", str);
+	ft_printf(RED "Error: \n" WHITE);
+	ft_printf("%s", str);
 	exit(1);
 }
 
 void	error_arg(char *str, t_vars *vars)
 {
-	ft_printf(RED "Error: " WHITE);
-	ft_printf("%s \n", str);
+	ft_printf(RED "Error: \n" WHITE);
+	ft_printf("%s", str);
 	exit(1);
 }
 

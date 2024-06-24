@@ -29,7 +29,7 @@ NO_COLOR=\033[0m
 all: $(MLX_PATH)/libmlx.a $(NAME)
 
 $(NAME): $(OBJ) $(GNL_OBJ) $(FT_PRINTF_OBJ)
-	make  $(MLX_PATH)
+	make $(MLX_PATH)
 	cc $(CFLAGS) $^ $(MLX_FLAGS) $(INCLUDES) -o $(NAME)
 	@echo "$$ASCII"
 
