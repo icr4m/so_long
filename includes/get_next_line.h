@@ -29,7 +29,7 @@ typedef enum e_line_status
 {
 	INVALID_LINE,
 	VALID_LINE
-} t_line_status;
+}	t_line_status;
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 300000
