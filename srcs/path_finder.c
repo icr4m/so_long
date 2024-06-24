@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:38:14 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/23 20:03:10 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/24 15:13:57 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ void	path_finder(t_vars *vars, t_point pos)
 
 void	path_checker(t_vars *vars)
 {
-	if (vars->elems.exit_found != 1)
+	if (vars->elems.exit_found != 1
+		|| vars->elems.c_acces != vars->elems.nb_collectibles)
 		error_map("No path found.", vars);
 }
