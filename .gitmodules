@@ -1,12 +1,9 @@
 [submodule "mlx"]
 	path = mlx
 	url = https://github.com/42Paris/minilibx-linux
-[submodule "gnl"]
-	path = gnl
-	url = https://github.com/icr4m/get_next_line
-[submodule "libft"]
-	path = libft
-	url = git@github.com:icr4m/Libft.git
 [submodule "ft_printf"]
 	path = ft_printf
 	url = https://github.com/icr4m/ft_printf
+[submodule "gnl"]
+	path = gnl
+	url = git@github.com:icr4m/get_next_line.git

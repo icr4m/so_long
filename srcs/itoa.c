@@ -6,11 +6,29 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 21:19:44 by ijaber            #+#    #+#             */
-/*   Updated: 2024/06/24 13:02:21 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/24 13:40:55 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static char	*ft_strdup(const char *s1)
+{
+	char	*str;
+	size_t	i;
+
+	str = (char *)malloc(ft_strlen(s1) * sizeof(char) + 1);
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (s1[i])
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
+}
 
 static unsigned int	get_abs(int n)
 {
@@ -50,9 +68,9 @@ static void	fill_number(char *src, int nb, unsigned int len)
 
 char	*ft_itoa(int n)
 {
-	char *new;
-	int len;
-	bool is_neg;
+	char	*new;
+	int		len;
+	bool	is_neg;
 
 	if (n == 0)
 		return (ft_strdup("0"));
