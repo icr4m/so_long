@@ -2,6 +2,6 @@
 so_long*
 .vscode
 funcheck/
-badmap/
+badmap
 *.txt
 *.sh
