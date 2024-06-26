@@ -22,5 +22,5 @@ git clone git@github.com:icr4m/so_long.git
 make
 ```
 ```bash
-./so_long maps/goodmap/any.ber
+./so_long maps/goodmap/map2.ber
 ```
