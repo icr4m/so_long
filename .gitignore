@@ -1,4 +1,7 @@
 *.o
-so_long
+so_long*
 .vscode
 funcheck/
+badmap/
+*.txt
+*.sh
